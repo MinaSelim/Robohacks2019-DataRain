@@ -35,7 +35,7 @@ fetch(requestURL)
 var i = 0;
 app.get('/', function(req, res){
    if(liveDataBool==true){
-        let ans = "temp="+weatherData.currently.temperature+" hum="+weatherData.currently.humidity+" pressure="+ weatherData.currently.pressure*100+ " pm=4/0/3ug uv="+weatherData.currently.uvIndex;
+        let ans = "temp="+weatherData.currently.temperature+" hum="+weatherData.currently.humidity+" pressure="+ weatherData.currently.pressure*100 + " pm=4/0/3ug uv="+weatherData.currently.uvIndex;
         res.send(ans);
  } 
    else 
@@ -55,9 +55,9 @@ app.get('/', function(req, res){
  app.get('*', function(req, res)
     {
        
-        if(fs.existsSync(dirname + req.url))
+        if(fs.existsSync(__dirname + req.url))
         {
-            res.sendFile(dirname + req.url)
+            res.sendFile(__dirname + req.url)
         }
         else
         {
