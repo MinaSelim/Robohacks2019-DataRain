@@ -203,14 +203,14 @@ var pl_str = [
               case PLSS_PL_TEMPERATURE:
                 var v = dv.getInt16(index + 1) / 10;
                 var txt = pl_str[t] + '=' + v.toFixed(1) + ' ';
-                console.log(txt);
+               // console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
   
               case PLSS_PL_HUMIDITY:
                 var txt = pl_str[t] + '=' + dv.getUint8(index + 1) + '% ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
@@ -221,7 +221,7 @@ var pl_str = [
                 var v3 = dv.getInt16(index + 5);
                 var txt = pl_str[t] + '=' + v1 + '/' + v2 + '/' + v3 + 'mg ';
                 ret += txt;
-                console.log(txt);
+                ////console.log(txt);
                 index += 7;
                 break;
   
@@ -229,7 +229,7 @@ var pl_str = [
                 var v1 = dv.getInt16(index + 1) / 10;
                 var v2 = dv.getInt16(index + 3) / 10;
                 var txt = pl_str[t] + '=' + v1.toFixed(1) + '/' + v2.toFixed(1) + 'mg ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 5;
                 break;
@@ -239,7 +239,7 @@ var pl_str = [
                 var v2 = dv.getInt16(index + 3) / 100;
                 var v3 = dv.getInt16(index + 5) / 100;
                 var txt = pl_str[t] + '=' + v1.toFixed(2) + '/' + v2.toFixed(2) + '/' + v3.toFixed(2) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 7;
                 break;
@@ -247,7 +247,7 @@ var pl_str = [
               case PLSS_PL_BATTERY:
                 var v1 = dv.getUint16(index + 1);
                 var txt = pl_str[t] + '=' + v1 + 'mv ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
@@ -255,7 +255,7 @@ var pl_str = [
               case PLSS_PL_LIGHT:
                 var v1 = dv.getUint16(index + 1);
                 var txt = pl_str[t] + '=' + v1 + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
@@ -263,7 +263,7 @@ var pl_str = [
               case PLSS_PL_SOUND:
                 var v1 = dv.getUint16(index + 1) / 10;
                 var txt = pl_str[t] + '=' + v1.toFixed(1) + 'db ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
@@ -272,14 +272,14 @@ var pl_str = [
                 var u320 = dv.getUint32(index + 1);
                 if (0xffffffff == u320) {
                   var txt = pl_str[t] + '=unsync ';
-                  console.log(txt);
+                  //console.log(txt);
                   ret += txt;
                 } else {
                   var u321 = dv.getUint32(index + 5);
                   var s1 = plss_gps_u32_to_str(u320, GPS_STR_FLAG_LETTER);
                   var s2 = plss_gps_u32_to_str(u321, GPS_STR_FLAG_LETTER | GPS_STR_FLAG_LONGITUDE);
                   var txt = pl_str[t] + '=' + s1 + ',' + s2 + ' ';
-                  console.log(txt);
+                  //console.log(txt);
                   ret += txt;
                 }
                 index += 9;
@@ -288,7 +288,7 @@ var pl_str = [
               case PLSS_PL_CO:
                 var v1 = dv.getUint16(index + 1);
                 var txt = pl_str[t] + '=' + v1 + 'ppm ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
@@ -296,21 +296,21 @@ var pl_str = [
               case PLSS_PL_EXT_ANALOG:
                 var v1 = dv.getUint16(index + 1);
                 var txt = pl_str[t] + '=' + v1 + 'mv ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
   
               case PLSS_PL_EXT_DIGITAL:
                 var txt = pl_str[t] + '=' + dv.getUint8(index + 1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
   
               case PLSS_PL_PRESSURE:
                 var txt = pl_str[t] + '=' + dv.getUint32(index + 1) + 'pa ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 5;
                 break;
@@ -318,87 +318,87 @@ var pl_str = [
               case PLSS_PL_EXT_TEMPERATURE:
                 var v1 = dv.getInt16(index + 1) / 10;
                 var txt = pl_str[t] + '=' + v1.toFixed(1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_DISP:
                 var v1 = dv.getInt16(index + 1) / 100;
                 var txt = pl_str[t] + '=' + v1.toFixed(2) + 'mm ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_PIR:
                 var txt = pl_str[t] + '=' + dv.getUint8(index + 1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
               case PLSS_PL_SOIL_HUMIDITY:
                 var txt = pl_str[t] + '=' + dv.getUint8(index + 1) + '% ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
               case PLSS_PL_EXT_PIR:
                 var txt = pl_str[t] + '=' + dv.getUint8(index + 1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
               case PLSS_PL_EXT_CNTR:
                 var txt = pl_str[t] + '=' + dv.getUint32(index + 1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 5;
                 break;
               case PLSS_PL_EXT_SWITCH:
               case PLSS_PL_EXT_LEAKAGE:
                 var txt = pl_str[t] + '=' + ((dv.getUint8(index + 1) & 0x80) >> 7) + ':' + (dv.getUint8(index + 1) & 0x7f) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
               case PLSS_PL_EXT_CO2:
                 var v1 = dv.getUint16(index + 1) / 10;
                 var txt = pl_str[t] + '=' + v1.toFixed(1) + '% ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_EXT_CO2_PPM:
                 var v1 = dv.getUint16(index + 1);
                 var txt = pl_str[t] + '=' + v1 + 'ppm ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_US_DISTANCE:
                 var v1 = dv.getUint16(index + 1);
                 var txt = pl_str[t] + '=' + v1 + 'mm ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_EXT_CURRENT:
                 var v1 = dv.getUint16(index + 1) * 10;
                 var txt = pl_str[t] + '=' + v1.toFixed(0) + 'mA ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_EXT_CURRENT_UA:
                 var v1 = dv.getUint16(index + 1) / 10;
                 var txt = pl_str[t] + '=' + v1.toFixed(1) + 'mA ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_EXT_PSI:
                 var v1 = dv.getUint16(index + 1);
                 var txt = pl_str[t] + '=' + v1 + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
@@ -407,19 +407,19 @@ var pl_str = [
                 var v2 = dv.getUint16(index + 3);
                 var v3 = dv.getUint16(index + 5);
                 var txt = pl_str[t] + '=' + v1 + '/' + v2 + '/' + v3 + 'ug ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 7;
                 break;
               case PLSS_PL_POS_BMP8:
                 var txt = pl_str[t] + '=' + dv.getUint8(index + 1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
               case PLSS_PL_POS_BMP16:
                 var txt = pl_str[t] + '=' + dv.getUint16(index + 1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
@@ -428,34 +428,34 @@ var pl_str = [
                 var v2 = dv.getUint16(index + 3)/100;
                 var v3 = dv.getUint16(index + 5)/100;
                 var txt = pl_str[t] + '=' + v1.toFixed(2) + '/' + v2.toFixed(2) + '/' + v3.toFixed(2) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 7;
                 break;
               case PLSS_PL_UV_INDEX:
               case PLSS_PL_WIND_DIR:
                 var txt = pl_str[t] + '=' + dv.getUint8(index + 1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
               case PLSS_PL_WIND_SPEED:
                 var txt = pl_str[t] + '=' + dv.getUint16(index + 1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_RAINFALL:
                 var v1 = dv.getUint16(index + 1);
                 var txt = pl_str[t] + '=' + v1.toFixed(1) + 'mm ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_VIBRATION:
                 var v1 = dv.getUint8(index + 1);
                 var txt = pl_str[t] + '=' + v1 + v & 0x8 ? '*':'-' + v1 & 0x2 ? '3':'2' + v1 & 0x1 ? 'D':'S' + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
@@ -464,7 +464,7 @@ var pl_str = [
                 var v2 = dv.getUint16(index + 3);
                 var v3 = dv.getUint16(index + 5);
                 var txt = pl_str[t] + '=' + v1 + '/' + v2 + '/' + v3 + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 7;
                 break;
@@ -474,7 +474,7 @@ var pl_str = [
                 var v2 = dv.getInt16(index + 3) / 10;
                 var v3 = dv.getInt16(index + 5) / 10;
                 var txt = pl_str[t] + '=' + v1.toFixed(1) +'/' + v2.toFixed(1) + '/' + v3.toFixed(1) + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 7;
                 break;
@@ -482,26 +482,26 @@ var pl_str = [
                 var v1 = dv.getUint16(index + 1);
                 var v2 = dv.getUint16(index + 3);
                 var txt = pl_str[t] + '=' + v1 + ',' + v2 + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 5;
                 break;
   
               case PLSS_PL_EXT_GAS_VOC:
                 var txt = pl_str[t] + '=' + dv.getUint16(index + 1) + 'ppm ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
               case PLSS_PL_EXT_PH_VALUE:
                 var txt = pl_str[t] + '=' + dv.getUint8(index + 1) / 10 + ' ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 2;
                 break;
               case PLSS_PL_EXT_O2_CONCENTRATION:
                 var txt = pl_str[t] + '=' + dv.getUint16(index + 1) + '% ';
-                console.log(txt);
+                //console.log(txt);
                 ret += txt;
                 index += 3;
                 break;
@@ -509,7 +509,7 @@ var pl_str = [
               default:
                 if (t == PLSS_PL_EXT_CH2O || (t >= PLSS_PL_EXT_NH3 && t <= PLSS_PL_EXT_C2H4O3)) {
                   var txt = pl_str[t] + '=' + dv.getUint16(index + 1) + ' ';
-                  console.log(txt);
+                  //console.log(txt);
                   ret += txt;
                   index += 3;
                   break;
