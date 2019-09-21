@@ -21,5 +21,6 @@ public class TemperatureData : MonoBehaviour
         x += .01;
         temperature.GetComponent<Text>().text = x.ToString()+"C";
 
+
     }
 }

@@ -60,7 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraController.cs" />
+    <Compile Include="Assets\CityBuilder.cs" />
     <Compile Include="Assets\TemperatureData.cs" />
+    <None Include="Assets\Urban Buildings Pack 1\runesimple.shader" />
+    <None Include="Assets\_CustomShaders\FsSoftGrass.shader" />
+    <None Include="Assets\_CustomShaders\ReadMe.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/projects/Robohacks2019-DataRain/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
