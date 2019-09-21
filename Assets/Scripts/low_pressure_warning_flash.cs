@@ -26,7 +26,7 @@ public class low_pressure_warning_flash : MonoBehaviour
 	{
 		var t = pressure.GetComponent<Text>().text;
 		double x = System.Convert.ToDouble(t.Substring(0, t.Length - 2));
-		if (x < 91000 & x > 0)
+		if (x < 92000 & x > 0)
 		{
 			imageToToggle.enabled = currentState;
 			StartBlink();

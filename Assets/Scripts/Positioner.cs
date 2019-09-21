@@ -22,6 +22,7 @@ public class Positioner : MonoBehaviour
         PM.position = new Vector2(CamPos.GetComponent<Transform>().position.x + 1350, CamPos.GetComponent<Transform>().position.y + 400);
         UV.position = new Vector2(CamPos.GetComponent<Transform>().position.x + 1350, CamPos.GetComponent<Transform>().position.y - 50);
 
+
     }
 
     // Update is called once per frame

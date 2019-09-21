@@ -62,10 +62,6 @@ public class DataUpdater : MonoBehaviour
             html = html.Replace(html.Substring(0, html.IndexOf(" ")+1), "");
             UV = html.Substring(0, html.IndexOf(" "));
             UV = UV.Substring(UV.IndexOf("=") + 1);
-            Debug.Log(Temp);
-            Debug.Log(Humidity);
-            Debug.Log(Pressure);
-            Debug.Log(PM);
 
             //Update the HUD elements
             TemperatureOb.GetComponent<UnityEngine.UI.Text>().text = Temp;

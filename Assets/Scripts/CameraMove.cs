@@ -39,8 +39,5 @@ public class CameraMove : MonoBehaviour
         pitch -= speedV * Input.GetAxis("Mouse Y");
 
         Cam.GetComponent<Transform>().eulerAngles = new Vector3(pitch, yaw, 0.0f);
-
-        
-
     }
 }
